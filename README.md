@@ -16,7 +16,7 @@ You need **Node.js** and a running **MongoDB** instance.
 
 ### 2. Configure & Run Backend
 1. Go to the `backend/` folder.
-2. Create a `.env` file:
+2. Create a `.env` file (or set these environment variables in your Render Dashboard):
    ```env
    PORT=5000
    MONGO_URI=your_mongodb_connection_string
@@ -31,7 +31,12 @@ You need **Node.js** and a running **MongoDB** instance.
 
 ### 3. Run Frontend Dashboard
 1. Go to the `frontend/` folder.
-2. Install packages and start:
+2. Create a `.env` file:
+   ```env
+   VITE_API_URL=http://localhost:5000
+   ```
+   *(When deploying on **Vercel**, set the `VITE_API_URL` Environment Variable in the Vercel Dashboard to point to your live Render backend URL, e.g. `https://insighttrack-backend.onrender.com`)*
+3. Install packages and start:
    ```bash
    npm install
    npm run dev

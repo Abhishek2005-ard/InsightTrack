@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { API_BASE_URL } from '../config';
 
 const Dashboard = ({ token, onSessionExpired }) => {
   const [data, setData] = useState(null);
@@ -13,7 +14,7 @@ const Dashboard = ({ token, onSessionExpired }) => {
       };
 
       // Fetch stats
-      const statsRes = await fetch('http://localhost:5000/api/stats', { headers });
+      const statsRes = await fetch(`${API_BASE_URL}/api/stats`, { headers });
       if (statsRes.status === 401) {
         onSessionExpired?.();
         return;
@@ -22,7 +23,7 @@ const Dashboard = ({ token, onSessionExpired }) => {
       setData(statsJson);
 
       // Fetch sessions to extract recent events
-      const sessionsRes = await fetch('http://localhost:5000/api/sessions', { headers });
+      const sessionsRes = await fetch(`${API_BASE_URL}/api/sessions`, { headers });
       if (sessionsRes.status === 401) {
         onSessionExpired?.();
         return;

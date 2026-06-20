@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { API_BASE_URL } from '../config';
 
 const Heatmap = ({ token, onSessionExpired }) => {
   const [clicks, setClicks] = useState([]);
@@ -10,7 +11,7 @@ const Heatmap = ({ token, onSessionExpired }) => {
 
   const fetchHeatmapData = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/heatmap', {
+      const res = await fetch(`${API_BASE_URL}/api/heatmap`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }

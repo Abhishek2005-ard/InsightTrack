@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { API_BASE_URL } from '../config';
 
 const Auth = ({ onAuthSuccess, onBack }) => {
   const [isLogin, setIsLogin] = useState(true);
@@ -17,7 +18,7 @@ const Auth = ({ onAuthSuccess, onBack }) => {
     const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register';
 
     try {
-      const response = await fetch(`http://localhost:5000${endpoint}`, {
+      const response = await fetch(`${API_BASE_URL}${endpoint}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

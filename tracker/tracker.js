@@ -1,5 +1,13 @@
 (function () {
-  const BACKEND_URL = 'http://localhost:5000/api/track';
+  let backendBase = 'http://localhost:5000';
+  if (document.currentScript && document.currentScript.src) {
+    try {
+      backendBase = new URL(document.currentScript.src).origin;
+    } catch (e) {
+      console.warn('InsightTrack: Failed to parse currentScript origin, using default.', e);
+    }
+  }
+  const BACKEND_URL = `${backendBase}/api/track`;
 
   // 1. Helper to generate a unique session ID
   function generateSessionID() {
