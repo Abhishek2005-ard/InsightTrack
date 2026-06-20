@@ -102,9 +102,9 @@ const LandingPage = ({ onGetStarted, isLoggedIn }) => {
 
       {/* Top Navigation */}
       <nav className="sticky top-0 w-full z-50 bg-surface/85 backdrop-blur-xl border-b border-outline-variant/20 shadow-md shadow-primary/5">
-        <div className="max-w-container-max mx-auto px-gutter py-md flex justify-between items-center">
-          <a className="flex items-center gap-sm font-display-sm text-display-sm font-bold tracking-tight text-on-surface" href="#">
-            <span className="material-symbols-outlined text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>filter_alt</span>
+        <div className="max-w-container-max mx-auto px-md sm:px-gutter py-sm sm:py-md flex justify-between items-center">
+          <a className="flex items-center gap-xs sm:gap-sm text-lg sm:text-display-sm font-bold tracking-tight text-on-surface" href="#">
+            <span className="material-symbols-outlined text-primary text-xl sm:text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>filter_alt</span>
             <span>InsightTrack</span>
           </a>
           <div className="hidden md:flex items-center gap-lg">
@@ -113,8 +113,15 @@ const LandingPage = ({ onGetStarted, isLoggedIn }) => {
             <a className="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#simulator">Simulator</a>
             <a className="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#dashboard" onClick={(e) => { e.preventDefault(); onGetStarted(); }}>Dashboard</a>
           </div>
-          <button className="bg-primary text-on-primary px-md py-sm rounded-lg font-label-md text-label-md active:scale-95 transition-transform duration-150" onClick={onGetStarted}>
-            {isLoggedIn ? 'Go to Dashboard' : 'Get Started'}
+          <button className="bg-primary text-on-primary px-sm py-xs sm:px-md sm:py-sm rounded-lg text-xs sm:text-sm font-semibold active:scale-95 transition-transform duration-150 cursor-pointer" onClick={onGetStarted}>
+            {isLoggedIn ? (
+              <>
+                <span className="hidden sm:inline">Go to Dashboard</span>
+                <span className="sm:hidden">Dashboard</span>
+              </>
+            ) : (
+              <span>Get Started</span>
+            )}
           </button>
         </div>
       </nav>
