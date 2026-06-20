@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InsightTrack Tracker Demo Store</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    header {
+      background-color: #6200ee;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .button-group {
+      margin-top: 20px;
+    }
+    button {
+      background-color: #6200ee;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+    button:hover {
+      background-color: #3700b3;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>InsightTrack Mock E-Commerce Store</h1>
+    <p>Simulating user interactions to test client-side tracking script.</p>
+  </header>
+  <main>
+    <h2>Product Section</h2>
+    <p>Click around this page to generate events that will be recorded in the dashboard.</p>
+    <div class="button-group">
+      <button id="add-to-cart">Add to Cart</button>
+      <button id="buy-now">Buy Now</button>
+    </div>
+  </main>
+  <!-- Load Tracker Script -->
+  <script src="tracker.js"></script>
+</body>
+</html>
